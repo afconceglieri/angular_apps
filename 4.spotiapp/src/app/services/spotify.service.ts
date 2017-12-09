@@ -22,18 +22,14 @@ export class SpotifyService {
   }
 
   getTop( id: string) {
-
     let url = `${ this.urlSpotify }artists/${ id }/top-tracks?country=US`;
-
     let headers = this.getHeaders();
 
     return this.http.get( url, { headers });
-
   }
 
-    getArtista( id: string) {
+  getArtista( id: string) {
     let url = `${ this.urlSpotify }artists/${ id }`;
-
     let headers = this.getHeaders();
 
     return this.http.get( url, { headers });
@@ -41,9 +37,7 @@ export class SpotifyService {
   }
 
   getArtistas( termino: string) {
-
     let url = `${ this.urlSpotify }search?query=${ termino }&type=artist&limit=20`;
-
     let headers = this.getHeaders();
 
     return this.http.get( url, { headers })
@@ -51,10 +45,7 @@ export class SpotifyService {
         this.artistas = resp.artists.items;
         return this.artistas;
       });
-
+  
   }
 
-
-  }
-
-  }
+}
